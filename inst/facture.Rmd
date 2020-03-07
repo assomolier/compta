@@ -1,0 +1,86 @@
+---
+title: "A letter of recommendation for Emi Tanaka"
+author: "Yihui Xie"
+output:
+  pagedown::html_letter:
+    self_contained: false
+    df_print: kable
+links-to-footnotes: true
+paged-footnotes: true
+params:
+  facture_n: "DATENUM"
+  client: "CLIENT"
+  contact: "PERSONNE EN CHARGE"
+  adresse: "LA BAS"
+  objet: "Sponsoring"
+  quantite: 1
+  prix: 1000
+  quoi: "SPONSORING DE"
+  date: "AUJOURDH'HUI"
+  fait_a: "Paris"
+---
+
+<!-- ![The RStudio logo](https://www.rstudio.com/wp-content/uploads/2016/09/RStudio-Logo-Blue-Gray-250.png){.logo} -->
+
+::: from
+molieR  
+Association loi 1901  
+Chez Mr Antoine Bichat  
+99 BOULEVARD PONIATOWSKI  
+75012 PARIS  
+:::
+
+
+`r params$contact`  
+`r params$client`  
+
+::: date
+`r params$date`  
+À `r params$fait_a`  
+:::
+
+<h2> FACTURE NUMÉRO `r params$facture_n`,  À : </h2>
+
+__Société__: `r params$client`
+
+__Adresse__: `r params$adresse`
+
+__Date__ : `r params$date`
+
+&nbsp;
+
+<h2> `r params$objet` </h2>
+
+```{r echo = FALSE}
+data.frame(
+  stringsAsFactors = FALSE,
+  Dénomination = params$quoi,
+   `Prix unitaire (TTC) Euros` = params$prix,
+  quantité = params$quantite,
+  `Total Euros` = params$quantite * params$prix
+)
+
+```
+
+<h4 align = "center" class = "break-after-me"> Total : `r params$quantite * params$prix` €</h4>
+
+&nbsp;
+
+<h3>Identité bancaire molieR</h3>
+
+```{r include = FALSE}
+rib <- compta::get_rib()
+```
+
+
+```{r echo = FALSE}
+rib[, 1:5]
+```
+
+__IBAN :__
+
+`r rib$IBAN`
+
+__Code BIC (Bank identification code) - code SWIFT :__ 
+
+`r rib$BIC`

@@ -1,0 +1,28 @@
+Package: compta
+Title: What the Package Does (One Line, Title Case)
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Colin",
+           family = "Fay",
+           role = c("aut", "cre"),
+           email = "contact@colinfay.me",
+           comment = c(ORCID = "0000-0001-7343-1846"))
+Description: What the package does (one paragraph).
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Imports: 
+    googlesheets4 (>= 0.1.0.9000),
+    magrittr,
+    thinkr,
+    withr,
+    cli,
+    rmarkdown,
+    pagedown,
+    fs,
+    tools,
+    lubridate,
+    stringr
+RoxygenNote: 6.1.1
+Remotes: 
+    tidyverse/googlesheets4
