@@ -18,6 +18,7 @@ params:
   quoi: "SPONSORING DE"
   date: "AUJOURDH'HUI"
   fait_a: "Paris"
+  money: "€"
 ---
 
 <!-- ![The RStudio logo](https://www.rstudio.com/wp-content/uploads/2016/09/RStudio-Logo-Blue-Gray-250.png){.logo} -->
@@ -55,14 +56,14 @@ __Date__ : `r params$date`
 data.frame(
   stringsAsFactors = FALSE,
   Dénomination = params$quoi,
-   `Prix unitaire (TTC) Euros` = params$prix,
+   `Prix unitaire (TTC)` = paste(params$prix, params$money),
   quantité = params$quantite,
-  `Total Euros` = params$quantite * params$prix
-)
+  `Total` = paste(params$quantite * params$prix, params$money)
+) 
 
 ```
 
-<h4 align = "center" class = "break-after-me"> Total : `r params$quantite * params$prix` €</h4>
+<h4 align = "center" class = "break-after-me"> Total : `r params$quantite * params$prix` `r params$money`</h4>
 
 &nbsp;
 

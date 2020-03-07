@@ -18,7 +18,7 @@ knitr::opts_chunk$set(
 Package interne de création de factures pour l'asso.
 
 
-```{r eval = FALSE}
+```{r}
 library(compta)
 get_fac() %>%
   new_fac_num() %>%

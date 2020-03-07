@@ -10,6 +10,7 @@
 #' @param quoi quoi
 #' @param date date
 #' @param fait_a fait_a
+#' @param money money
 #' @param type type
 #' @param dir dir
 #'
@@ -30,6 +31,7 @@ create_fac <- function(
   quoi = "SPONSORING DE",
   date = as.character(Sys.Date()),
   fait_a = "Paris",
+  money = "€",
   type = "sponsoring",
   dir = "."
 ) {
@@ -63,7 +65,8 @@ create_fac <- function(
           prix = prix,
           quoi = quoi,
           date = date,
-          fait_a = fait_a
+          fait_a = fait_a,
+          money = money
         )
       )
       cat_rule("Shoting to pdf")
