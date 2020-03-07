@@ -1,24 +1,11 @@
----
-output: github_document
----
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-```{r, include = FALSE}
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>",
-  fig.path = "man/figures/README-",
-  out.width = "100%"
-)
-```
-
 # factures
 
-Package interne de création de factures pour l'asso.
+Package interne de création de factures pour l’asso.
 
-
-```{r eval = FALSE}
+``` r
 library(compta)
 get_fac() %>%
   new_fac_num() %>%
@@ -32,4 +19,3 @@ get_fac() %>%
     quoi = "Sponsoring satRday Bordeaux"
   )
 ```
-
