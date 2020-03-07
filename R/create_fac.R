@@ -13,6 +13,7 @@
 #' @param money money
 #' @param type type
 #' @param dir dir
+#' @param comment comment
 #'
 #' @importFrom cli cat_rule
 #' @importFrom rmarkdown render
@@ -32,6 +33,7 @@ create_fac <- function(
   date = as.character(Sys.Date()),
   fait_a = "Paris",
   money = "€",
+  comment = "",
   type = "sponsoring",
   dir = "."
 ) {
@@ -53,7 +55,7 @@ create_fac <- function(
           "facture.Rmd",
           package = "compta"
         ),
-        output_dir = dir,
+        output_dir = ".",
         output_file = html_nm,
         params = list(
           facture_n = facture_n,
@@ -98,7 +100,8 @@ create_fac <- function(
       objet = objet,
       quantite = quantite,
       prix = prix,
-      quoi = quoi
+      quoi = quoi,
+      comment = comment
     ),
     url
   )

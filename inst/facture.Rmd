@@ -63,7 +63,7 @@ data.frame(
 
 ```
 
-<h4 align = "center" class = "break-after-me"> Total : `r params$quantite * params$prix` `r params$money`</h4>
+<h4 align = "center" class = "break-after-me"> Total : `r prettyNum(params$quantite * params$prix, " ")` `r params$money`</h4>
 
 &nbsp;
 
